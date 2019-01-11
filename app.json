@@ -29,6 +29,10 @@
     },
     "SLACK_WEBHOOK_URL": {
       "required": false
+    },
+    "REDIS_PROVIDER": {
+      "value": "REDIS_URL",
+      "required": true
     }
   },
   "buildpacks": [
