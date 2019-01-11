@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby File.read('.ruby-version').strip
+
 gem 'aws-sdk-ses'
 gem 'http'
 gem 'mime'
