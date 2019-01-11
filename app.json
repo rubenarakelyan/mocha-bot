@@ -1,0 +1,43 @@
+{
+  "name": "Mocha Bot",
+  "description": "A random coffee organising bot",
+  "repository": "https://github.com/rubenarakelyan/mocha-bot",
+  "env": {
+    "ADMIN_PASSWORD": {
+      "required": true
+    },
+    "USER_PASSWORD": {
+      "required": true
+    },
+    "SEND_EMAILS": {
+      "value": "false"
+    },
+    "SEND_SLACK_MESSAGES": {
+      "value": "false"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": false
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": false
+    },
+    "AWS_REGION": {
+      "required": false
+    },
+    "EMAIL_FROM": {
+      "required": false
+    },
+    "SLACK_WEBHOOK_URL": {
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
+}

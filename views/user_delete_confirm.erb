@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md">
+    <form action="/user/delete" method="post">
+      <p>Are you sure you want to delete <%= person[:name] %>?</p>
+      <input type="hidden" name="person_id" value="<%= person[:id] %>">
+      <button type="submit" class="btn btn-danger">Delete person</button>
+      &nbsp;
+      <a href="/admin">Cancel</a>
+    </form>
+  </div>
+</div>

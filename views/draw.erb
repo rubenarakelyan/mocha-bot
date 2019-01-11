@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md">
+    <p>The random coffee draw has been completed.</p>
+    <p>A CSV file with the list of pairings will be sent by email to <%= admin_email_address %>.</p>
+    <% if send_emails && send_slack_messages %>
+    <p>Participants will be contacted via email and Slack message.</p>
+    <% elsif send_emails %>
+    <p>Participants will be contacted via email.</p>
+    <% elsif send_slack_messages %>
+    <p>Participants will be contacted via Slack message.</p>
+    <% else %>
+    <p>Participants will not be contacted automatically. Please ensure you let participants know of their random coffee partners.</p>
+    <% end %>
+    <p><a href="/admin">Back to admin page</a></p>
+  </div>
+</div>

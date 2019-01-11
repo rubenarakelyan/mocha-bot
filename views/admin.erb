@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md">
+    <h2>Carry out the draw</h2>
+    <p>Clicking the draw button will carry out the random coffee draw.</p>
+    <form action="/draw" method="post">
+      <div class="form-group">
+        <label for="email-address">Email address</label>
+        <input type="email" name="email_address" id="email-address" class="form-control <% unless form_valid %><% if email_address.empty? %>is-invalid<% end %><% end %>" placeholder="Your email address" value="<%= email_address %>" aria-describedby="email-address-help">
+        <small id="email-address-help" class="form-text text-muted">A CSV file with the results of the draw will be sent to this email address.</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Draw</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md">
+    <h2>Delete people</h2>
+    <form action="/user/delete-confirm" method="post">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email address</th>
+            <th scope="col">Slack username</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% people.each do |person| %>
+          <tr>
+            <td scope="row"><%= person[:name] %></td>
+            <td><%= person[:email_address] %></td>
+            <td>
+              <% if person[:slack_username] %>
+                @<%= person[:slack_username] %>
+              <% else %>
+                Not set
+              <% end %>
+            </td>
+            <td><button type="submit" name="person_id" value="<%= person[:id] %>" class="btn btn-danger btn-sm">Delete person</button></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>

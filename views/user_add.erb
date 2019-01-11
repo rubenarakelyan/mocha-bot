@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md">
+    <form action="/user/add" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control <% unless form_valid %><% if name.empty? %>is-invalid<% else %>is-valid<% end %><% end %>" placeholder="Your name" value="<%= name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="email-address">Email address</label>
+        <input type="email" name="email_address" id="email-address" class="form-control <% unless form_valid %><% if email_address.empty? %>is-invalid<% else %>is-valid<% end %><% end %>" placeholder="Your email address" value="<%= email_address %>" required>
+      </div>
+      <div class="form-group">
+        <label for="slack-username">Slack username (optional)</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="text" name="slack_username" id="slack-username" class="form-control <% unless form_valid %>is-valid<% end %>" placeholder="Your Slack username" value="<%= slack_username %>">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign me up</button>
+    </form>
+  </div>
+</div>
