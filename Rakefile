@@ -1,6 +1,9 @@
 # `spec` task
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec)
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end
 
 # `lint` task
 desc 'Run rubocop linting'

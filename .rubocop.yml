@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.5
   Exclude:
+    - 'Rakefile'
     - 'spec/spec_helper.rb'
 
 Metrics/AbcSize:
